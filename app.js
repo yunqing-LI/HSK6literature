@@ -1,4 +1,4 @@
-/* 孔乙己 注释读本 — 交互脚本 */
+/* 中国近现代文学选读 — 注释读本交互脚本（各章共用） */
 (function () {
   'use strict';
 
@@ -11,7 +11,7 @@
   var currentWord = null;
 
   /* ---------- 生词本 (localStorage) ---------- */
-  var KEY = 'kyj_wordbook';
+  var KEY = window.WB_KEY || 'reader_wordbook';
   function loadWB() {
     try { return JSON.parse(localStorage.getItem(KEY)) || {}; }
     catch (e) { return {}; }

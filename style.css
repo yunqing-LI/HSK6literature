@@ -175,3 +175,49 @@ figure.illus figcaption{font-size:.78rem;color:var(--ink2);text-align:center;pad
   .ch-marker em{display:none}
   .ch-text p{font-size:1.05rem}
 }
+
+/* ---------- top nav (章节页返回目录) ---------- */
+.topnav{max-width:1060px;margin:0 auto;padding:.9rem 1.5rem 0}
+.topnav a{
+  font-size:.82rem;color:var(--ink2);text-decoration:none;letter-spacing:.08em;
+  border-bottom:1px solid var(--line);padding-bottom:1px;transition:color .15s;
+}
+.topnav a:hover{color:var(--red);border-bottom-color:var(--red)}
+
+/* ---------- 主页：目录 ---------- */
+.toc{max-width:980px;margin:0 auto;padding:2.5rem 1.5rem 1rem}
+.toc h2{
+  font-family:var(--kai);font-weight:400;font-size:2rem;letter-spacing:.15em;
+  border-bottom:3px double var(--ink);padding-bottom:.6rem;margin-bottom:1.6rem;
+}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:1.6rem}
+.toc-item a{
+  display:flex;gap:1.6rem;align-items:center;text-decoration:none;color:var(--ink);
+  border:1.5px solid var(--ink);background:var(--paper2);
+  box-shadow:5px 5px 0 rgba(38,33,24,.14);padding:1.4rem 1.6rem;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.toc-item a:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 rgba(38,33,24,.18)}
+.toc-no{
+  flex:0 0 auto;font-family:var(--kai);color:var(--red);
+  border:1.5px solid var(--red);border-radius:50%;
+  width:3rem;height:3rem;line-height:2.9rem;text-align:center;font-size:1.2rem;
+}
+.toc-thumb{flex:0 0 120px;border:4px solid var(--paper);outline:1px solid var(--ink)}
+.toc-thumb img{display:block;width:100%;height:auto}
+.toc-info h3{font-family:var(--kai);font-weight:400;font-size:1.7rem;letter-spacing:.1em;line-height:1.2}
+.toc-info .toc-author{font-size:.9rem;color:var(--ink2);letter-spacing:.12em;margin-top:.3rem}
+.toc-info .toc-ru{font-size:.8rem;color:var(--ink2);margin-top:.4rem;letter-spacing:.04em}
+.toc-info .toc-open{
+  display:inline-block;margin-top:.6rem;font-size:.78rem;color:var(--red);
+  border-bottom:1px dotted var(--red);letter-spacing:.1em;
+}
+.toc-soon{opacity:.55}
+.toc-soon .toc-open{border-bottom:none;color:var(--ink2)}
+
+@media (max-width:640px){
+  .toc-item a{gap:1rem;padding:1rem}
+  .toc-thumb{flex-basis:84px}
+  .toc-no{width:2.4rem;height:2.4rem;line-height:2.3rem;font-size:1rem}
+  .toc-info h3{font-size:1.35rem}
+}
