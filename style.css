@@ -221,3 +221,13 @@ figure.illus figcaption{font-size:.78rem;color:var(--ink2);text-align:center;pad
   .toc-no{width:2.4rem;height:2.4rem;line-height:2.3rem;font-size:1rem}
   .toc-info h3{font-size:1.35rem}
 }
+
+/* ---------- 段落小标题 ---------- */
+.sec-head{max-width:44em;margin:0 auto;padding:2.6rem 0 0;text-align:center}
+.sec-head h2{
+  display:inline-block;font-family:var(--kai);font-weight:400;font-size:1.9rem;
+  letter-spacing:.3em;color:var(--ink);padding:.1em .4em .1em .7em;
+  border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);line-height:2;
+}
+.sec-head .sec-ru{margin-top:.7rem;font-size:.82rem;color:var(--ink2);letter-spacing:.12em}
+@media (max-width:640px){.sec-head h2{font-size:1.45rem}}
