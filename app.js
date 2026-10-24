@@ -127,15 +127,38 @@
   }, { passive: true });
 
   /* ---------- 脚注 ---------- */
+  function flashTarget(el, className) {
+    el.classList.add(className);
+    setTimeout(function () { el.classList.remove(className); }, 1600);
+  }
+
   document.querySelectorAll('.fn').forEach(function (a) {
+    var number = a.getAttribute('data-fn');
+    var refId = 'fnref' + number;
+    var li = document.getElementById('fn' + number);
+    if (!li) return;
+
+    a.id = refId;
+    a.setAttribute('aria-label', '查看注释 ' + number);
     a.addEventListener('click', function (e) {
       e.preventDefault();
-      var id = 'fn' + a.getAttribute('data-fn');
-      var li = document.getElementById(id);
-      if (!li) return;
       li.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      li.classList.add('flash');
-      setTimeout(function () { li.classList.remove('flash'); }, 1600);
+      flashTarget(li, 'flash');
+    });
+
+    var num = li.querySelector('.fn-num');
+    if (!num) return;
+    var back = document.createElement('a');
+    back.className = 'fn-back';
+    back.href = '#' + refId;
+    back.textContent = num.textContent;
+    back.setAttribute('aria-label', '返回正文注释 ' + number + ' 的位置');
+    back.title = '返回原处';
+    num.replaceWith(back);
+    back.addEventListener('click', function (e) {
+      e.preventDefault();
+      a.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      flashTarget(a, 'fn-return');
     });
   });
 

@@ -83,6 +83,9 @@ body{
   text-decoration:none;margin:0 .05em;cursor:pointer;
 }
 .fn:hover{text-decoration:underline}
+.fn-return{background:var(--red-soft);border-radius:2px}
+.fn-back{color:var(--red);text-decoration:none;cursor:pointer;white-space:nowrap}
+.fn-back:hover{text-decoration:underline}
 
 /* illustrations */
 figure.illus{
@@ -92,6 +95,18 @@ figure.illus{
 }
 figure.illus img{display:block;width:100%}
 figure.illus figcaption{font-size:.78rem;color:var(--ink2);text-align:center;padding:.45rem .5rem;letter-spacing:.08em}
+.image-placeholder-inner{
+  min-height:260px;padding:2rem;display:flex;flex-direction:column;gap:.65rem;
+  align-items:center;justify-content:center;text-align:center;color:var(--ink2);
+  border:1px dashed var(--line);background:var(--paper);
+}
+.image-placeholder-inner span{font-family:var(--kai);font-size:1.35rem;letter-spacing:.2em}
+.image-placeholder-inner small{font-family:monospace;font-size:.7rem;letter-spacing:0;overflow-wrap:anywhere}
+.sec-bridge{
+  max-width:38em;margin:1rem auto 0;padding:.7rem 1rem;
+  border-left:2px solid var(--red);color:var(--ink2);
+  font-size:.88rem;line-height:1.8;text-align:left;
+}
 
 /* ---------- popup ---------- */
 .pop{
